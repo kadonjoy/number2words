@@ -26,7 +26,7 @@ export default function NumberConverter() {
 
   return (
     <div className="converter-container">
-      <div className="mb-6">
+      <div className="input-group">
         <label htmlFor="input-number" className="block text-sm font-semibold mb-2">
           Enter Number:
         </label>
@@ -40,7 +40,7 @@ export default function NumberConverter() {
         />
       </div>
 
-      <div className="text-center mb-6">
+      <div className="convert-button-container">
         <button
           onClick={handleConvert}
           className="convert-button"
@@ -51,7 +51,7 @@ export default function NumberConverter() {
 
       <div className="mb-6">
         <label htmlFor="words-output" className="block text-sm font-semibold mb-2">
-          Words:
+          Output Words:
         </label>
         <div className="relative">
           <textarea
@@ -60,21 +60,23 @@ export default function NumberConverter() {
             readOnly
             className="result-area w-full"
           />
-          <button
-            onClick={handleCopy}
-            className="copy-button absolute right-2 top-2"
-          >
-            Copy
-          </button>
         </div>
       </div>
 
-      <button
-        onClick={handleClear}
-        className="clear-button block mx-auto"
-      >
-        Clear
-      </button>
+      <div className="flex justify-between items-center gap-4">
+        <button
+          onClick={handleClear}
+          className="clear-button flex-1"
+        >
+          Clear
+        </button>
+        <button
+          onClick={handleCopy}
+          className="copy-button flex-1"
+        >
+          Copy
+        </button>
+      </div>
     </div>
   )
 }

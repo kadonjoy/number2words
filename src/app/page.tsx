@@ -1,32 +1,24 @@
-import NumberConverter from '@/components/NumberConverter'
+import NumberConverter from "@/components/NumberConverter";
+import FeatureIntro from "@/components/FeatureIntro";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-100 py-10">
-      <div className="max-w-4xl mx-auto px-4">
+    <main className="main-flex-ads min-h-screen bg-gray-100 py-10">
+      {/* <div className="ad-slot ad-left">ads1</div> */}
+      <div className="max-w-6xl w-full mx-auto px-4">
         <h1 className="text-3xl font-bold text-center mb-8">
-          Number to Words Converter
+          Online Number to Words Converter
         </h1>
         <NumberConverter />
-        
-        <div className="mt-10 bg-white p-6 rounded-lg shadow">
-          <h2 className="text-xl font-bold mb-4">Why Use Our Number to Words Converter?</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="font-bold">1. Real-Time Conversion</h3>
-              <p>The converter updates results instantly as you type</p>
-            </div>
-            <div>
-              <h3 className="font-bold">2. Accurate Results</h3>
-              <p>Get precise English word representations of numbers</p>
-            </div>
-            <div>
-              <h3 className="font-bold">3. Easy to Use</h3>
-              <p>Simple interface for quick conversions</p>
-            </div>
+        {/*         <div className="my-8 flex justify-center">
+          <div className="ad-slot bg-gray-200 rounded-lg flex items-center justify-center text-gray-500"
+               style={{ width: '100%', maxWidth: 1400, height: 10 }}>
+            AD
           </div>
-        </div>
+        </div> */}
+        <FeatureIntro />
       </div>
+      {/* <div className="ad-slot ad-right">ads2</div> */}
     </main>
-  )
+  );
 }

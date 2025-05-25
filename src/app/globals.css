@@ -37,6 +37,16 @@ body {
   background-color: var(--bg-color);
   color: #333;
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: calc(100vh / 10);
+  padding-bottom: calc(100vh / 10);
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -90,19 +100,62 @@ textarea:focus {
   background-color: white;
   border-radius: 1rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  padding: 2rem;
+  padding: 3rem 4rem;
+  width: 100%;
+  max-width: 1400px;   /* Increase max width, common values: 1200px, 1400px, 1600px, etc. */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Add media queries for responsive design */
+@media (min-width: 1920px) {
+  .converter-container {
+    width: 90vw;
+  }
+}
+
+@media (min-width: 2560px) {
+  .converter-container {
+    width: 95vw;
+  }
+}
+
+@media (max-width: 1400px) {
+  .converter-container {
+    max-width: 95vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .converter-container {
+    max-width: 100vw;
+    padding: 2rem 0.5rem;
+  }
+}
+
+/* Add more space between input and convert button container */
+.converter-container .input-group {
   margin-bottom: 2rem;
+}
+
+/* Style the convert button container */
+.convert-button-container {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  text-align: center;
 }
 
 .result-area {
   background-color: #f8fafc;
   border: 2px solid #e2e8f0;
   border-radius: 0.5rem;
-  min-height: 100px;
-  padding: 1rem;
+  min-height: 150px;                /* Increase textarea height */
+  padding: 1.5rem;                  /* Increase textarea padding */
   font-family: 'Courier New', Courier, monospace;
-  font-size: 1.125rem;
-  margin: 1rem 0;
+  font-size: 1.25rem;               /* Increase font size */
+  margin: 1.5rem 0;
 }
 
 button {
@@ -136,17 +189,72 @@ button:hover {
   background-color: #4f46e5;
 }
 
+.convert-button {
+  background-color: #0f7f89;
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2.5rem;             /* 增加按钮内边距 */
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  min-width: 250px;                 /* 增加按钮宽度 */
+}
+
+.convert-button:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.convert-button:active {
+  transform: translateY(0);
+}
+
+.main-flex-ads {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--bg-color);
+  gap: 2vw;
+}
+
+.ad-slot {
+  width: 180px;
+  min-height: 600px;
+  background: #e5e7eb;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+}
+
+.center-content {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.feature-intro {
+  padding-left: 2.5rem;  /* 约等于 Tailwind 的 px-10 */
+  padding-right: 2.5rem;
+}
+
 @media (max-width: 768px) {
-  .converter-container {
-    padding: 1rem;
+  .feature-intro {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
+}
 
-  h1 {
-    font-size: 1.5rem;
+@media (max-width: 1200px) {
+  .ad-slot {
+    display: none;
   }
-
-  button {
-    width: 100%;
-    margin: 0.5rem 0;
+  .main-flex-ads {
+    gap: 0;
   }
 }
