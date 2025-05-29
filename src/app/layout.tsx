@@ -6,7 +6,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Number to Words Converter",
-  description: "Convert numbers to English words instantly",
+  description:
+    "Number2Words.org converts numbers into English words instantly. Ideal for business documents, checks, legal forms, and educational purposes.",
   keywords: [
     "number to words",
     "number to text",
