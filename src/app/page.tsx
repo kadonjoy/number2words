@@ -1,11 +1,45 @@
 import NumberConverter from "@/components/NumberConverter";
 import FeatureIntro from "@/components/FeatureIntro";
+import Link from "next/link";
+import Script from "next/script";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <main className="main-flex-ads min-h-screen bg-gray-100 py-10">
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full border-s-gray-300 shadow z-50">
+        <div className="w-full flex items-center justify-between px-4 h-16">
+          {/* Left: Site name and navigation */}
+          <Link
+            href="/"
+            className="text-xl font-bold hover:text-violet-700 transition-colors"
+          >
+            Home
+          </Link>
+          {/* Right: Logo */}
+          <Image
+            src="/logo.webp"
+            alt="Site Logo"
+            width={120}
+            height={60}
+            className="h-10 w-auto"
+            style={{ objectFit: "contain" }}
+            priority
+          />
+        </div>
+      </nav>
+      {/* Add pt-16 to main content to avoid being covered by navbar */}
+      <main className="main-flex-ads min-h-screen bg-gray-100 py-10 pt-16">
         {/* <div className="ad-slot ad-left">ads1</div> */}
+        <div className="ad-slot ad-right">
+          <Script
+            data-cfasync="false"
+            type="text/javascript"
+            src="//pl123456.puhtml.com/82/6d/f3/826df33e1880e1ab086c8406879dc14e.js"
+            strategy="afterInteractive"
+          />
+        </div>
         <div className="max-w-6xl w-full mx-auto px-4">
           <h1 className="text-3xl font-bold text-center mb-8">
             Online Number to Words Converter
@@ -19,7 +53,15 @@ export default function Home() {
         </div> */}
           <div className="h-8" /> <FeatureIntro />
         </div>
-        {/* <div className="ad-slot ad-right">ads2</div> */}
+        {/* ads1 */}
+        <div className="ad-slot ad-right">
+          <Script
+            data-cfasync="false"
+            type="text/javascript"
+            src="//pl123456.puhtml.com/82/6d/f3/826df33e1880e1ab086c8406879dc14e.js"
+            strategy="afterInteractive"
+          />
+        </div>
       </main>
       <div className="h-8" />{" "}
       {/* Add vertical space between main content and footer */}
