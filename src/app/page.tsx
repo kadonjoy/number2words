@@ -30,69 +30,35 @@ export default function Home() {
         </div>
       </nav>
       {/* Add pt-16 to main content to avoid being covered by navbar */}
-      <main className="main-flex-ads min-h-screen bg-gray-100 py-10 pt-16">
-        {/* <div className="ad-slot ad-left">ads1</div> */}
-        <div className="ad-slot ad-left">
-          {/* Inject the atOptions config */}
-          <Script
-            id="adsterra-config"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-        atOptions = {
-          'key' : 'd7a55862ff822612fdaaed00913b6a9f',
-          'format' : 'iframe',
-          'height' : 300,
-          'width' : 160,
-          'params' : {}
-        };
-      `,
-            }}
-          />
-          {/* Load the Adsterra script */}
-          <Script
-            id="adsterra-script"
-            strategy="afterInteractive"
-            src="//www.highperformanceformat.com/d7a55862ff822612fdaaed00913b6a9f/invoke.js"
-          />
-        </div>
-        <div className="max-w-6xl w-full mx-auto px-4">
+      {/* Right Ad (fixed, outside main) */}
+      <Script
+        id="adsterra-config-right"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+          atOptions = {
+            'key' : 'd7a55862ff822612fdaaed00913b6a9f',
+            'format' : 'iframe',
+            'height' : 300,
+            'width' : 160,
+            'params' : {}
+          };
+        `,
+        }}
+      />
+      <Script
+        id="adsterra-script-right"
+        strategy="afterInteractive"
+        src="//www.highperformanceformat.com/d7a55862ff822612fdaaed00913b6a9f/invoke.js"
+      />
+      <main className="main-flex-ads min-h-screen bg-gray-100 py-10 pt-16 lg:pl-44 lg:pr-44">
+        <div className="w-full mx-auto">
           <h1 className="text-3xl font-bold text-center mb-8">
             Online Number to Words Converter
           </h1>
           <NumberConverter />
-          {/*         <div className="my-8 flex justify-center">
-          <div className="ad-slot bg-gray-200 rounded-lg flex items-center justify-center text-gray-500"
-               style={{ width: '100%', maxWidth: 1400, height: 10 }}>
-            AD
-          </div>
-        </div> */}
-          <div className="h-8" /> <FeatureIntro />
-        </div>
-        {/* ads1 */}
-        <div className="ad-slot ad-right">
-          {/* Inject the atOptions config */}
-          <Script
-            id="adsterra-config"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-        atOptions = {
-          'key' : 'd7a55862ff822612fdaaed00913b6a9f',
-          'format' : 'iframe',
-          'height' : 300,
-          'width' : 160,
-          'params' : {}
-        };
-      `,
-            }}
-          />
-          {/* Load the Adsterra script */}
-          <Script
-            id="adsterra-script"
-            strategy="afterInteractive"
-            src="//www.highperformanceformat.com/d7a55862ff822612fdaaed00913b6a9f/invoke.js"
-          />
+          <div className="h-8" />
+          <FeatureIntro />
         </div>
       </main>
       <div className="h-8" />{" "}

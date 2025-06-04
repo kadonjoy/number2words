@@ -1,6 +1,6 @@
 export default function FeatureIntro() {
   return (
-    <div className="feature-intro mt-10 bg-white p-8 rounded-lg shadow">
+    <div className="converter-container mt-10">
       <div className="space-y-4">
         <div>
           <h3 className="font-bold mt-8 mb-2 text-lg">
