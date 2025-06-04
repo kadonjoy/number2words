@@ -32,12 +32,28 @@ export default function Home() {
       {/* Add pt-16 to main content to avoid being covered by navbar */}
       <main className="main-flex-ads min-h-screen bg-gray-100 py-10 pt-16">
         {/* <div className="ad-slot ad-left">ads1</div> */}
-        <div className="ad-slot ad-right">
+        <div className="ad-slot ad-left">
+          {/* Inject the atOptions config */}
           <Script
-            data-cfasync="false"
-            type="text/javascript"
-            src="//pl123456.puhtml.com/82/6d/f3/826df33e1880e1ab086c8406879dc14e.js"
+            id="adsterra-config"
             strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+        atOptions = {
+          'key' : 'd7a55862ff822612fdaaed00913b6a9f',
+          'format' : 'iframe',
+          'height' : 300,
+          'width' : 160,
+          'params' : {}
+        };
+      `,
+            }}
+          />
+          {/* Load the Adsterra script */}
+          <Script
+            id="adsterra-script"
+            strategy="afterInteractive"
+            src="//www.highperformanceformat.com/d7a55862ff822612fdaaed00913b6a9f/invoke.js"
           />
         </div>
         <div className="max-w-6xl w-full mx-auto px-4">
@@ -55,11 +71,27 @@ export default function Home() {
         </div>
         {/* ads1 */}
         <div className="ad-slot ad-right">
+          {/* Inject the atOptions config */}
           <Script
-            data-cfasync="false"
-            type="text/javascript"
-            src="//pl123456.puhtml.com/82/6d/f3/826df33e1880e1ab086c8406879dc14e.js"
+            id="adsterra-config"
             strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+        atOptions = {
+          'key' : 'd7a55862ff822612fdaaed00913b6a9f',
+          'format' : 'iframe',
+          'height' : 300,
+          'width' : 160,
+          'params' : {}
+        };
+      `,
+            }}
+          />
+          {/* Load the Adsterra script */}
+          <Script
+            id="adsterra-script"
+            strategy="afterInteractive"
+            src="//www.highperformanceformat.com/d7a55862ff822612fdaaed00913b6a9f/invoke.js"
           />
         </div>
       </main>
