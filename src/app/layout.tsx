@@ -43,6 +43,10 @@ export default function RootLayout({
             `,
           }}
         />
+        <meta
+          name="google-site-verification"
+          content="eY1iUmhT05BUsVtcAoBPt-akQ7F_zhlpl5ookoJsyUw"
+        />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
